@@ -1,0 +1,16 @@
+@import '../../styles/settings.scss';
+
+.navoption {
+  text-decoration: none;
+  color: $color-light;
+  padding: 15px;
+  margin: auto;
+  position: absolute;
+}
+
+.mynav {
+  background: $color-dark;
+  margin: 0 auto;
+  height: 100px;
+  position: relative;
+}

@@ -1,6 +1,13 @@
+import Navigation from "./components/Navigation/Navigation"
+import Footer from "./components/Footer/Footer";
+import TableList from "./components/TableList/TableList"
 const App = () => {
   return (
-    <h1>Hello world</h1>
+    <>
+      <Navigation />
+      <TableList />
+      <Footer />
+    </>
   );
 };
 

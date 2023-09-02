@@ -1,10 +1,11 @@
+import initialState from './initialState'
 import { createStore } from 'redux';
+
+//selectors
+export const getAllTables = (state) => state.tables;
+
 const reducer = (state, action) => {
   return state;
-};
-
-const initialState = {
-  columns: []
 };
 
 const store = createStore(
