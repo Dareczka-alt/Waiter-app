@@ -3,6 +3,7 @@ import { createStore } from 'redux';
 
 //selectors
 export const getAllTables = (state) => state.tables;
+export const getTableById = ({ tables }, tableId) => tables.filter(table => table.id === tableId)[0];
 
 const reducer = (state, action) => {
   return state;

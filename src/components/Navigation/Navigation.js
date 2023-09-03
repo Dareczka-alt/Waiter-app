@@ -1,15 +1,17 @@
 import styles from './Navigation.module.scss';
-import clsx from 'clsx';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const Navigation = () => {
   return (
-    <div className={clsx("d-flex justify-content-between", styles.mynav)}>
-      <div className="col-11"><h3><a className={styles.navoption} href="/home">Waiter.app</a></h3></div>
-      <div className="col-1 text-center pt-2"><a className={styles.navoption} href="/home">Home</a>
+    <nav className={styles.navbar}>
+      <div className="row justify-between px-4 pt-4 ">
+        <div className="col-6"><Link to="/" className={styles.navoption}><h3>Waiter.app</h3></Link></div>
+        <div className="col-6 d-flex justify-content-end align-items-center">
+          <NavLink className={styles.navoption} to="/">Home</NavLink>
+        </div>
       </div>
-    </div >
+    </nav>
   );
-};
-
+}
 export default Navigation;

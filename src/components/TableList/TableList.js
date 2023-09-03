@@ -1,7 +1,9 @@
 import { useSelector } from 'react-redux';
-import Table from '../Table/Table';
+import Table from './../Table/Table';
 import { getAllTables } from '../../redux/store';
 import styles from './TableList.module.scss';
+
+
 
 const TableList = () => {
   const tables = useSelector(state => getAllTables(state));
@@ -13,6 +15,7 @@ const TableList = () => {
           <Table
             key={table.id}
             {...table} />)}
+
       </ul>
     </div>
   )

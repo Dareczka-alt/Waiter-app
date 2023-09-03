@@ -8,16 +8,15 @@
   border-bottom: 1px solid $color-dark;
 }
 
-.btncon {
-  position: relative;
-}
 
 .btnshow {
-  position: absolute;
-  right: 50px;
   border-radius: 5px;
   background: $color-dark;
   color: $color-light;
-  height: 50px;
-  width: 100px;
+  position: absolute;
+}
+
+.buttoncon {
+  position: relative;
+  left: 400px;
 }
