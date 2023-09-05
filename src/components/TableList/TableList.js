@@ -6,7 +6,9 @@ import styles from './TableList.module.scss';
 
 
 const TableList = () => {
+
   const tables = useSelector(state => getAllTables(state));
+
   return (
     <div>
       <h1 className="ml-3 p-3">All tables</h1>
