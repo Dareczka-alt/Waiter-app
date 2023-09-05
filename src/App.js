@@ -4,15 +4,14 @@ import TableForm from './components/TableForm/TableForm'
 import Footer from './components/Footer/Footer'
 import { Routes, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import { fetchTables } from './redux/store';
+import { fetchTables } from './redux/tablesRedux';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-const App = (props) => {
-
+const App = () => {
   const dispatch = useDispatch();
-
   useEffect(() => dispatch(fetchTables()), [dispatch]);
+
 
   return (
     <main>
