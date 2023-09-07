@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 
 
 
+
 const TableForm = (props) => {
   const id = props.tableId;
   const [status, setStatus] = useState('');
@@ -22,6 +23,7 @@ const TableForm = (props) => {
     window.location.href = "http://localhost:3000/";
 
   }
+
 
 
   return (
