@@ -11,6 +11,7 @@ const TableList = () => {
 
   const tables = useSelector(state => getAllTables(state));
 
+
   if (!tables)
     return (
       <Loading />

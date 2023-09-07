@@ -1,6 +1,6 @@
 import TableList from './components/TableList/TableList'
 import Navigation from './components/Navigation/Navigation'
-import TableForm from './components/TableForm/TableForm'
+import SingleTable from './components/SingleTable/SingleTable'
 import Footer from './components/Footer/Footer'
 import { Routes, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
@@ -19,7 +19,7 @@ const App = () => {
       <Container>
         <Routes>
           <Route path="/" element={<TableList />} />
-          <Route path={'/table/:tableId'} element={<TableForm />} />
+          <Route path={'/table/:tableId'} element={<SingleTable />} />
         </Routes>
       </Container>
       <Footer />
