@@ -5,6 +5,7 @@
   background: $color-dark;
   color: $color-light;
   position: absolute;
+  margin: 30px;
 }
 
 .paramtitle {
@@ -13,6 +14,15 @@
   font-weight: bold;
 }
 
-.invisible {
-  display: none;
+.myselect {
+  border: 2px solid $color-dark;
+  width: 120px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.title {
+  margin: 30px;
+  font-size: 36px;
+  font-weight: bold;
 }
