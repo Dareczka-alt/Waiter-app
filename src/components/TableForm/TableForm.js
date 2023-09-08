@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import styles from './TableForm.module.scss'
 import MyInput from './../MyInput/MyInput';
 import { requestTableParams } from '../../redux/tablesRedux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 
@@ -16,13 +16,39 @@ const TableForm = (props) => {
   const [peopleMax, setPeopleMax] = useState('');
   const [peopleSitting, setPeopleSitting] = useState('');
 
+
   const dispatch = useDispatch();
+
+
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(requestTableParams({ id, status, peopleSitting, peopleMax, bill }));
     window.location.href = "http://localhost:3000/";
-
   }
+
+
+  useEffect(() => {
+    if (status === "Free" || status === "Cleaning") {
+      setPeopleMax(0);
+      setPeopleSitting(0)
+    }
+    if (status === "Busy") {
+      setBill(0)
+    }
+
+  }, [status]);
+
+  useEffect(() => {
+    if (peopleMax > 10 || peopleSitting < 0) {
+      setPeopleMax({ peopleMax });
+
+    }
+    if (peopleSitting > 10 || peopleSitting < 0) {
+      setPeopleSitting({ peopleSitting });
+
+    }
+  }, [peopleSitting, peopleMax]);
+
 
 
   return (
@@ -31,7 +57,7 @@ const TableForm = (props) => {
 
       <div >
         <label className={styles.paramtitle}>Status:</label>
-        <select className={styles.myselect} value={status} onChange={e => setStatus(e.target.value)}>
+        <select className={styles.myselect} name="Status" value={status} onChange={e => setStatus(e.target.value)}>
           <option defaultValue={status}>{`${props.status}`}</option>
           <option value="Busy">Busy</option>
           <option value="Free">Free</option>
@@ -40,12 +66,12 @@ const TableForm = (props) => {
         </select>
       </div>
       <div>
-        <label className={styles.paramtitle}>People:</label> <MyInput max={10} min={0} value={peopleSitting} onChange={e => setPeopleSitting(e.target.value)} />
+        <label className={styles.paramtitle}>People:</label> <MyInput value={peopleSitting} onChange={e => setPeopleSitting(e.target.value)} />
         <span className={clsx(styles.paramtitle, "m-2")}>/</span>
-        <MyInput max={10} min={0} value={peopleMax} onChange={e => setPeopleMax(e.target.value)} />
+        <MyInput value={peopleMax} onChange={e => setPeopleMax(e.target.value)} />
       </div>
       <div>
-        <label className={styles.paramtitle}>Bill:</label><span className={clsx(styles.paramtitle, "p-0, m-0")}>$</span> <MyInput min={0} value={bill} onChange={e => setBill(e.target.value)} />
+        <label className={styles.paramtitle}>Bill:</label><span className={clsx(styles.paramtitle, "p-0, m-0")}>$</span> <MyInput value={bill} onChange={e => setBill(e.target.value)} />
       </div>
 
       <button className={clsx("btn-default btn-lg mt-4", styles.mybtn)}>Update</button>
