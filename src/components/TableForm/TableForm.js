@@ -40,19 +40,17 @@ const TableForm = (props) => {
 
   useEffect(() => {
     if (peopleMax > 10 || peopleSitting < 0) {
-      setPeopleMax({ peopleMax });
+      setPeopleMax(props.peopleMax);
 
     }
     if (peopleSitting > 10 || peopleSitting < 0) {
-      setPeopleSitting({ peopleSitting });
+      setPeopleSitting(props.peopleSitting);
 
     }
-  }, [peopleSitting, peopleMax]);
+  }, [props, peopleSitting, peopleMax]);
 
-
-
-  return (
-    <form className="container" onSubmit={handleSubmit}>
+  const otherForm = () => {
+    return (<form className="container" onSubmit={handleSubmit}>
       <h1 className={styles.title}>Table {`${id}`}</h1>
 
       <div >
@@ -70,13 +68,39 @@ const TableForm = (props) => {
         <span className={clsx(styles.paramtitle, "m-2")}>/</span>
         <MyInput value={peopleMax} onChange={e => setPeopleMax(e.target.value)} />
       </div>
-      <div>
-        <label className={styles.paramtitle}>Bill:</label><span className={clsx(styles.paramtitle, "p-0, m-0")}>$</span> <MyInput value={bill} onChange={e => setBill(e.target.value)} />
-      </div>
-
       <button className={clsx("btn-default btn-lg mt-4", styles.mybtn)}>Update</button>
-    </form >
-  )
+    </form >)
+  }
+
+  if (status === "Cleaning" || status === "Free")
+    return (otherForm())
+  else
+    return (
+      <form className="container" onSubmit={handleSubmit}>
+        <h1 className={styles.title}>Table {`${id}`}</h1>
+
+        <div >
+          <label className={styles.paramtitle}>Status:</label>
+          <select className={styles.myselect} name="Status" value={status} onChange={e => setStatus(e.target.value)}>
+            <option defaultValue={status}>{`${props.status}`}</option>
+            <option value="Busy">Busy</option>
+            <option value="Free">Free</option>
+            <option value="Cleaning">Cleaning</option>
+            <option value="Reserved">Reserved</option>
+          </select>
+        </div>
+        <div>
+          <label className={styles.paramtitle}>People:</label> <MyInput value={peopleSitting} onChange={e => setPeopleSitting(e.target.value)} />
+          <span className={clsx(styles.paramtitle, "m-2")}>/</span>
+          <MyInput value={peopleMax} onChange={e => setPeopleMax(e.target.value)} />
+        </div>
+        <div>
+          <label className={styles.paramtitle}>Bill:</label><span className={clsx(styles.paramtitle, "p-0, m-0")}>$</span> <MyInput value={bill} onChange={e => setBill(e.target.value)} />
+        </div>
+
+        <button className={clsx("btn-default btn-lg mt-4", styles.mybtn)}>Update</button>
+      </form >
+    )
 
 }
 

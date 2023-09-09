@@ -18,8 +18,8 @@ const SingleTable = () => {
           key={table.id}
           tableId={table.id}
           status={table.status}
-          peopleAmount={table.peopleAmount}
-          maxPeopleAmount={table.maxPeopleAmount}
+          peopleSitting={table.peopleSitting}
+          peopleMax={table.peopleMax}
           bill={table.bill} />
 
       )}
