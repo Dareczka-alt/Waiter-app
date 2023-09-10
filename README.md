@@ -1,3 +1,8 @@
+Adres do strony na REPLIT.COM
+
+https://waiter-app--dareczka-alt.repl.co/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
