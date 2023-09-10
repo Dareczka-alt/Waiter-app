@@ -11,10 +11,10 @@ import { useDispatch } from 'react-redux';
 
 const TableForm = (props) => {
   const id = props.tableId;
-  const [status, setStatus] = useState('');
-  const [bill, setBill] = useState('');
-  const [peopleMax, setPeopleMax] = useState('');
-  const [peopleSitting, setPeopleSitting] = useState('');
+  const [status, setStatus] = useState(props.status);
+  const [bill, setBill] = useState(props.bill);
+  const [peopleMax, setPeopleMax] = useState(props.peopleMax);
+  const [peopleSitting, setPeopleSitting] = useState(props.peopleSitting);
 
 
   const dispatch = useDispatch();
