@@ -20,3 +20,12 @@
   position: relative;
   left: 400px;
 }
+
+@media (max-width: 767px) {
+
+  .buttoncon {
+    bottom: 80px;
+    left: 250px;
+  }
+
+}
