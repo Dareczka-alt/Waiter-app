@@ -23,10 +23,11 @@
 
 @media (max-width: 767px) {
   .buttoncon {
-    left: 290px;
+    left: 10px;
     margin: 0;
     padding: 0;
-    bottom: 80px;
+    bottom: 15px;
+
   }
 
 }
@@ -34,9 +35,9 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
   .buttoncon {
-    left: 500px;
+    left: 100px;
     margin: 0;
     padding: 0;
-    bottom: 80px;
+
   }
 }
