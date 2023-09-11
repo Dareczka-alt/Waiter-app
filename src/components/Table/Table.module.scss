@@ -25,13 +25,18 @@
   .buttoncon {
     left: 300px;
     position: absolute;
+    margin-left: 0;
+    padding: 0;
   }
+
 }
 
 
 @media (min-width: 768px) and (max-width: 991px) {
   .buttoncon {
-    left: 450px;
+    left: 550px;
     position: absolute;
+    margin: 0;
+    padding: 0;
   }
 }
