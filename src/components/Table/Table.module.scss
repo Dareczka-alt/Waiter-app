@@ -23,7 +23,11 @@
 
 @media (max-width: 767px) {
   .buttoncon {
-    left: 200px;
+    left: 150px;
+
+  }
+
+  .btnshow {
     top: 150px;
   }
 }
@@ -31,6 +35,6 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
   .buttoncon {
-    left: 200px;
+    left: 150px;
   }
 }
