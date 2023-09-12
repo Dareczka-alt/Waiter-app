@@ -6,6 +6,7 @@
 
 .table {
   border-bottom: 1px solid $color-dark;
+  position: relative;
 }
 
 
@@ -13,29 +14,8 @@
   border-radius: 5px;
   background: $color-dark;
   color: $color-light;
-
-}
-
-
-
-@media (max-width: 767px) {
-  .buttonshow {
-    margin: 0;
-    padding: 0;
-    bottom: 15px;
-
-  }
-
-
-}
-
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .buttonshow {
-    margin: 0;
-    padding: 0;
-    bottom: 15px;
-
-  }
+  position: absolute;
+  margin: 0 auto;
+  bottom: 30px;
 
 }
