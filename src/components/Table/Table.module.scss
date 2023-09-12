@@ -17,5 +17,11 @@
   position: absolute;
   margin: 0 auto;
   bottom: 30px;
+}
 
+@media (max-width: 991px) {
+  .btnshow {
+    position: relative;
+    bottom: 0;
+  }
 }
